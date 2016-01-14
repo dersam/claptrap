@@ -1,0 +1,18 @@
+{
+  "name": "Claptrap",
+  "description": "Functional PHP Web Framework",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sam Schmidt",
+      "email": "samuel@dersam.net"
+    }
+  ],
+  "require": {
+    "php": "^7.0.0"
+  },
+  "autoload": {
+    "files": "src/dersam/claptrap/core.php"
+  }
+}
