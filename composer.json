@@ -13,6 +13,9 @@
     "php": "^7.0.0"
   },
   "autoload": {
-    "files": "src/dersam/claptrap/core.php"
+    "files": ["src/Dersam/Claptrap/core.php", "src/local/routes.php"],
+    "psr-4": {
+      "Dersam\\Claptrap\\":"src/Dersam/Claptrap"
+    }
   }
 }
