@@ -7,7 +7,6 @@
  */
 
 function app($state) {
-    print_r($state);
     $route = $state['routes'][$state['path']];
     $route($state);
 };
