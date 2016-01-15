@@ -13,7 +13,7 @@ function let($params, ...$functions) {
     }
 }
 
-function printer(&$params) {
+function printer($params) {
     print_r($params);
 }
 
