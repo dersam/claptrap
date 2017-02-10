@@ -5,6 +5,7 @@ namespace Claptrap;
 use Claptrap\Http\Request;
 use Claptrap\Http\Response;
 use Claptrap\Renderer\Text;
+use Dersam\Dog;
 
 /**
  *
@@ -18,10 +19,9 @@ final class Claptrap
         $request = new Request();
         $response = new Response();
 
-        $item = new Renderable\Text();
-        $item->addLine('hello this is dog!');
-        $response->addRenderableItem($item);
-        $response->setRenderer(new Text());
+        $pipeline = new Dog();
+        $pipeline->assemble();
+        $pipeline->activate($request, $response);
 
         echo $response->render();
     }

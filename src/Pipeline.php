@@ -2,6 +2,9 @@
 declare(strict_types = 1);
 namespace Claptrap;
 
+use Claptrap\Http\Request;
+use Claptrap\Http\Response;
+
 /**
  *
  *
@@ -11,8 +14,18 @@ abstract class Pipeline
 {
     protected $pipes = [];
 
-    public function attach(Pipe $pipe) : void
+    abstract public function assemble() : void;
+
+    protected function attach(Pipe $pipe) : void
     {
         $this->pipes[] = $pipe;
+    }
+
+    public function activate(Request $request, Response $response) : void
+    {
+        /** @var Pipe $pipe */
+        foreach ($this->pipes as $pipe) {
+            $pipe->transform($request, $response);
+        }
     }
 }
