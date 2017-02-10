@@ -1,6 +1,6 @@
 {
-  "name": "claptrap",
-  "description": "Functional PHP Web Framework",
+  "name": "dersam/claptrap",
+  "description": "some crazy nonsense",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
