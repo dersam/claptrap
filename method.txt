@@ -1,9 +1,0 @@
-create request object
-
-defroute() - takes arbitrary set of functions, each receiving a state transit object
-    - each function transforms the transitobj
-    - each function must return the transformed transitobj
-    - route must define output type - at the end of the transformations, the
-        state object is passed through to the response builder
-        - possible outputs: json, txt, template (twig? etc)
-        - responsedata on the transit object is used by the response builder

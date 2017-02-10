@@ -1,5 +1,5 @@
 {
-  "name": "Claptrap",
+  "name": "claptrap",
   "description": "Functional PHP Web Framework",
   "minimum-stability": "stable",
   "license": "MIT",
@@ -10,10 +10,10 @@
     }
   ],
   "require": {
-    "php": "^7.0.0"
+    "php": "^7.1.0",
+    "nikic/fast-route": "^1.2"
   },
   "autoload": {
-    "files": ["src/loader.php"],
     "psr-4": {
       "Dersam\\Claptrap\\":"src/Dersam/Claptrap"
     }
