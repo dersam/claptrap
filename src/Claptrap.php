@@ -4,8 +4,7 @@ namespace Claptrap;
 
 use Claptrap\Http\Request;
 use Claptrap\Http\Response;
-use Claptrap\Renderer\Text;
-use Dersam\Dog;
+use FastRoute\Dispatcher;
 
 /**
  *
@@ -19,9 +18,29 @@ final class Claptrap
         $request = new Request();
         $response = new Response();
 
-        $pipeline = new Dog();
-        $pipeline->assemble();
-        $pipeline->activate($request, $response);
+        /**
+         * @var Dispatcher
+         */
+        $dispatcher = require 'pipes.php';
+
+        $routeInfo = $dispatcher->dispatch('GET', '/dog');
+        switch ($routeInfo[0]) {
+            case Dispatcher::NOT_FOUND:
+                // ... 404 Not Found
+                break;
+            case Dispatcher::METHOD_NOT_ALLOWED:
+                $allowedMethods = $routeInfo[1];
+                // ... 405 Method Not Allowed
+                break;
+            case Dispatcher::FOUND:
+                $handler = $routeInfo[1];
+                $vars = $routeInfo[2];
+                /** @var Pipeline $pipeline */
+                $pipeline = new $handler();
+                $pipeline->assemble();
+                $pipeline->activate($request, $response);
+                break;
+        }
 
         echo $response->render();
     }
