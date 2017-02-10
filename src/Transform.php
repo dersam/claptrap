@@ -9,7 +9,7 @@ use Claptrap\Http\Response;
  *
  * @author Sam Schmidt <samuel@dersam.net>
  */
-interface ITransform
+interface Transform
 {
     public function transform(Request $request, Response $response);
 }

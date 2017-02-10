@@ -7,7 +7,7 @@ namespace Claptrap\Http;
  *
  * @author Sam Schmidt <samuel@dersam.net>
  */
-class Request
+final class Request
 {
 
 }
