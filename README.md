@@ -16,3 +16,5 @@ define transforms to apply
 - final assembly based on a renderer
 
 renderer receives all renderable items, responsible for figuring out what to do
+
+abstract as generic 'task handler' could be cli or web requests
