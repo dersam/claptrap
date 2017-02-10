@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Dersam\\Claptrap\\":"src/Dersam/Claptrap"
+      "Claptrap\\":"src/"
     }
   }
 }
