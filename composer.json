@@ -11,11 +11,12 @@
   ],
   "require": {
     "php": "^7.1.0",
-    "nikic/fast-route": "^1.2"
+    "nikic/fast-route": "^1.2",
+    "phpunit/phpunit": "^6"
   },
   "autoload": {
     "psr-4": {
-      "Claptrap\\":"src/"
+      "Dersam\\Claptrap\\":"src/"
     }
   }
 }
