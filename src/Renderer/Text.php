@@ -18,7 +18,7 @@ class Text extends Renderer
      * @return string
      * @throws Exception
      */
-    public function render(array $items): string
+    public function flush(array $items): string
     {
         $text = '';
 

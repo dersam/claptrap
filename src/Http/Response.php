@@ -26,7 +26,7 @@ final class Response
 
     public function render()
     {
-        return $this->renderer->render($this->renderableItems);
+        return $this->renderer->flush($this->renderableItems);
     }
 
     /**

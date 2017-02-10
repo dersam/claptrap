@@ -2,7 +2,6 @@
 declare(strict_types = 1);
 namespace Claptrap;
 
-use Claptrap\Renderable;
 use Exception;
 
 /**
@@ -33,5 +32,5 @@ abstract class Renderer
      * @param Renderable[] $items
      * @return string
      */
-    abstract public function render(array $items) : string;
+    abstract public function flush(array $items) : string;
 }
