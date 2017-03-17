@@ -1,5 +1,8 @@
 #Claptrap
 
+*Allow blocks to define their load order if other blocks are present, but leave
+it up to the renderer to determine this. No crosstalk between blocks.*
+
 request is immutable, response is a single state object mutated by various
 transformation methods
 
