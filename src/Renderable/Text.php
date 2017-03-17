@@ -11,7 +11,7 @@ use Claptrap\Renderable;
  */
 class Text extends Renderable
 {
-    public function addLine(string $line) :void
+    public function addLine(string $line)
     {
         $this->push($line . PHP_EOL);
     }

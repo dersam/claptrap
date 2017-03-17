@@ -14,14 +14,14 @@ abstract class Pipeline
 {
     protected $pipes = [];
 
-    abstract public function assemble() : void;
+    abstract public function assemble();
 
-    protected function attach(Pipe $pipe) : void
+    protected function attach(Pipe $pipe)
     {
         $this->pipes[] = $pipe;
     }
 
-    public function activate(Request $request, Response $response) : void
+    public function activate(Request $request, Response $response)
     {
         /** @var Pipe $pipe */
         foreach ($this->pipes as $pipe) {

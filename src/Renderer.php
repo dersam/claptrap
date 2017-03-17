@@ -13,7 +13,7 @@ abstract class Renderer
 {
     protected $canHandle = [];
 
-    public function validate(array $items) : void
+    public function validate(array $items)
     {
         foreach ($items as $item) {
             $itemClass = get_class($item);

@@ -11,12 +11,12 @@ abstract class Renderable
 {
     protected $data = [];
 
-    public function set(string $key, $value) : void
+    public function set(string $key, $value)
     {
         $this->data[$key] = $value;
     }
 
-    public function push($value) : void
+    public function push($value)
     {
         $this->data[] = $value;
     }

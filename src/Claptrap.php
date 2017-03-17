@@ -23,7 +23,7 @@ final class Claptrap
          */
         $dispatcher = require 'pipes.php';
 
-        $routeInfo = $dispatcher->dispatch('GET', '/dog');
+        $routeInfo = $dispatcher->dispatch('GET', $_SERVER['REQUEST_URI']);
         switch ($routeInfo[0]) {
             case Dispatcher::NOT_FOUND:
                 // ... 404 Not Found
