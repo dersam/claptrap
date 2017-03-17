@@ -20,12 +20,19 @@ class Html extends Renderer
      */
     public function flush(array $items): string
     {
-        $text = '';
+        $body = '';
+        $head = '';
 
         foreach ($items as $item) {
-            $text .= $item;
+            if (get_class($item) == Renderable\Html\Head::class
+                || is_subclass_of($item, Renderable\Html\Head::class)
+            ) {
+                $head .= $item;
+            } else {
+                $body .= $item;
+            }
         }
 
-        return $text;
+        return "<html><head>$head</head>$body</html>";
     }
 }
